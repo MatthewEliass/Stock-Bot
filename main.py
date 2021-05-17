@@ -29,19 +29,19 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
     print('bot is ready')
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game("nhentai 2.0"))
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game("Ready to find Stocks!"))
 
 @bot.event
 async def on_member_join(member):
-    await bot.get_channel(796154565581209621).send(f'{member.mention} welcome to my crib!')
+    await bot.get_channel(796154565581209621).send(f'{member.mention} welcome to the server!')
     print(f'{member.name} has connected')
 
 @bot.command(name='respond')
 async def respond(ctx):
-    quotes = ['what do you want', 'why did you summon me?', 'how can I help you?']
+    quotes = ['What do you need?', 'Why did you summon me?', 'How can I help you?']
     response = random.choice(quotes)
     respondto = ctx.message.author.mention
-    await ctx.send('Yo ' + respondto + ' ' + response)
+    await ctx.send('Hi! ' + respondto + ' ' + response)
 
 @bot.command(name='stock')
 async def stock(ctx, arg):
